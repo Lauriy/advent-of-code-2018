@@ -21,7 +21,7 @@ def test_first(test_input, expected_result):
     (['abcde', 'fghij', 'klmno', 'pqrst', 'fguij', 'axcye', 'wvxyz'], 'fgij'),
     (my_input, None)
 ])
-def test_first(test_input, expected_result):
+def test_second(test_input, expected_result):
     day2 = Day2()
     if expected_result is not None:
         assert day2.second(test_input) == expected_result
