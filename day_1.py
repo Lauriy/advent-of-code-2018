@@ -45,26 +45,23 @@ my_input = [-17, -20, -15, -2, -7, -4, -18, -7, -5, -6, 16, 6, 2, -7, 18, 4, -9,
 
 
 class Day1:
-    def first(self, input_array):
-        self.first_answer = sum(input_array)
+    @staticmethod
+    def first(input_array):
+        return sum(input_array)
 
-        return self.first_answer
+    @staticmethod
+    def second(input_array):
+        second_answer = None
+        sum_so_far = 0
+        sum_map = {0: True}
 
-    def _iterate_over_input(self, input_array):
-        for number in input_array:
-            self.sum_so_far += number
-            if self.sum_so_far in self.sum_map:
-                self.second_answer = self.sum_so_far
-                break
-            else:
-                self.sum_map[self.sum_so_far] = True
+        while second_answer is None:
+            for number in input_array:
+                sum_so_far += number
+                if sum_so_far in sum_map:
+                    second_answer = sum_so_far
+                    break
+                else:
+                    sum_map[sum_so_far] = True
 
-    def second(self, input_array):
-        self.second_answer = None
-        self.sum_so_far = 0
-        self.sum_map = {0: True}
-
-        while self.second_answer is None:
-            self._iterate_over_input(input_array)
-
-        return self.second_answer
+        return second_answer

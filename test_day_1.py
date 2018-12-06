@@ -1,6 +1,6 @@
 import pytest
 
-from day1 import Day1, my_input
+from day_1 import Day1, my_input
 
 
 @pytest.mark.parametrize('test_input, expected_result', [
